@@ -1,7 +1,3 @@
-import spacy
-
-nlp = spacy.load("en_core_web_sm")
-
 skills_list = [
 "python",
 "machine learning",
@@ -11,17 +7,19 @@ skills_list = [
 "tensorflow",
 "sql",
 "data science",
-"nlp"
+"nlp",
+"react",
+"node.js"
 ]
 
 def extract_skills(text):
 
-    doc = nlp(text.lower())
+    text = text.lower()
 
     found_skills = []
 
     for skill in skills_list:
-        if skill in text.lower():
+        if skill in text:
             found_skills.append(skill)
 
     return found_skills
